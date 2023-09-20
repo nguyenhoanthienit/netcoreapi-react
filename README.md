@@ -1,1 +1,1 @@
-# React JS with .Net Core API and SQL Server
+# React JS with .NET Core API and SQL Server
