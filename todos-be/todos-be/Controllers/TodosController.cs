@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using todos_be.Model;
 using todos_be.Service.Todos;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -32,20 +33,23 @@ namespace todos_be.Controllers
 
         // POST api/<TodosController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post(Todo todo)
         {
+            return Ok(_todosService.AddTodo(todo));
         }
 
         // PUT api/<TodosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public IActionResult Put(Todo todo)
         {
+            return Ok(_todosService.UpdateTodo(todo));
         }
 
         // DELETE api/<TodosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            return Ok(_todosService.DeleteTodo(id));
         }
     }
 }

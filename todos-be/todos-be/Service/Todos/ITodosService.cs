@@ -7,6 +7,6 @@ namespace todos_be.Service.Todos
         List<Todo> GetTodos();
         bool AddTodo(Todo todo);
         bool UpdateTodo(Todo todo);
-        bool DeleteTodo(Todo todo);
+        bool DeleteTodo(int id);
     }
 }
